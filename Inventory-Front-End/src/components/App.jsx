@@ -5,9 +5,10 @@ import Routes from "./Routes";
 export default function App() {
   return (
     <div>
-        <Router>
+      word
+        {/* <Router>
             <Routes/>
-        </Router>
+        </Router> */}
     </div>
   )
 }
