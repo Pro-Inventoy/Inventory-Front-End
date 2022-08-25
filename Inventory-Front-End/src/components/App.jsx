@@ -5,20 +5,22 @@ import Inventory from './Inventory/Inventory.jsx'
 import Orders from './Orders/Orders.jsx'
 import Users from './Users/Users.jsx'
 import Profile from './Profile/Profile.jsx'
-
+import Layout from './Page/Layout.jsx'
+import UserAuth from './AuthPage/UserAuth.jsx'
 export default function App() {
   return (
     <div>
         <Router>
             <Routes>
-                {/* <Route element={<AuthPage />} />
-                <Route element={<Layout />}> */}
+              <Route path="user/*" element={<UserAuth />} />
+                {/* <Route path="auth" element={<Auth />} /> */}
+                <Route element={<Layout />}>
                     <Route index element={<Homepage />} />
                     <Route path="inventory" element={<Inventory />} />
                     <Route path="orders" element={<Orders />} />
                     <Route path="users" element={<Users />} />
                     <Route path="profile" element={<Profile />} />
-                {/* </Route> */}
+                </Route>
             </Routes>
         </Router>
     </div>
