@@ -4,6 +4,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.10.2",
     "@mui/styled-engine-sc": "^5.10.1",
+    "classnames": "^2.3.1",
     "styled-components": "^5.3.5"
   }
 }
