@@ -18,6 +18,7 @@ export function useStatus() {
 }
 
 export function useAuth() {
+  console.log('loggoff')
   const { setUser } = useContext(UserActionContext);
 
   const createAction = (service) => async (credentials) => {
