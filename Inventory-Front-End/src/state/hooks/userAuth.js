@@ -9,6 +9,7 @@ import {
 import {
   UserStateContext,
   UserActionContext,
+  UserProvider,
 } from '../context/UserContext.jsx';
 
 export function useStatus() {
@@ -18,8 +19,8 @@ export function useStatus() {
 }
 
 export function useAuth() {
-  console.log('loggoff')
-  const { setUser } = useContext(UserActionContext);
+  let setUser = UserProvider.setUser
+  setUser  = useContext(UserActionContext);
 
   const createAction = (service) => async (credentials) => {
     const { user, error } = await service(credentials);

@@ -1,6 +1,7 @@
 import client from './supabase-client.js';
 
 export function getUser() {
+    console.log('gettinuser')
   return client.auth.user();
 }
 

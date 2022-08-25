@@ -11,7 +11,7 @@ import {
 export const UserStateContext = createContext();
 export const UserActionContext = createContext();
 
-export default function UserProvider({ children }) {
+export function UserProvider({ children }) {
   const [user, setUser] = useState(getUser());
   const [profile, setProfile] = useState(getLocalProfile());
 
@@ -38,8 +38,8 @@ export default function UserProvider({ children }) {
     if (user) loadProfile();
 
     const { data } = onAuthChange((event) => {
-      if (event == 'SIGNED_IN') loadProfile();
-      if (event == 'SIGNED_OUT') {
+      if (event === 'SIGNED_IN') loadProfile();
+      if (event === 'SIGNED_OUT') {
         setUser(null);
         setProfile(null);
         removeLocalProfile();
@@ -48,7 +48,7 @@ export default function UserProvider({ children }) {
     return () => {
       data.unsubscribe();
     };
-  }, []);
+  }, [user]);
 
   const stateValue = {
     user,

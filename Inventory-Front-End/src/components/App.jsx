@@ -6,13 +6,14 @@ import Orders from './Orders/Orders.jsx'
 import Users from './Users/Users.jsx'
 import Profile from './Profile/Profile.jsx'
 import Layout from './Page/Layout.jsx'
-
+import UserAuth from './AuthPage/UserAuth.jsx'
 export default function App() {
   return (
     <div>
         <Router>
             <Routes>
-                {/* <Route element={<AuthPage />} /> */}
+              <Route path="user/*" element={<UserAuth />} />
+                {/* <Route path="auth" element={<Auth />} /> */}
                 <Route element={<Layout />}>
                     <Route index element={<Homepage />} />
                     <Route path="inventory" element={<Inventory />} />
