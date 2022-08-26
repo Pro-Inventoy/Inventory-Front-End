@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useProfile } from '../../state/hooks/userAuth.js';
 import { useForm } from '../../state/hooks/formData.js';
 import { FormButton, InputControl } from '../Forms/FormControl.jsx';
-import styles from './Profile.css';
+import './Profile.css';
 
 export default function Profile() {
   const [, updateProfile] = useProfile();
@@ -27,7 +27,7 @@ export default function Profile() {
   };
 
   return (
-    <section className={styles.Profile}>
+    <section className="Profile">
       <form onSubmit={handleSubmit}>
         <h1>User Profile</h1>
 
@@ -41,7 +41,7 @@ export default function Profile() {
         />
 
         <InputControl
-          className={styles.Avatar}
+          className="Avatar"
           label="Avatar"
           name="avatar"
           required

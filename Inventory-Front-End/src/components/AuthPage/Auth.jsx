@@ -5,7 +5,7 @@ import {
 } from '../Forms/FormControl.jsx';
 import { useForm } from '../../state/hooks/formData.js';
 import { useAuth } from '../../state/hooks/userAuth.js';
-import styles from './Auth.css';
+import './Auth.css';
 
 export default function Auth() {
   const { signIn, signUp } = useAuth();
@@ -43,7 +43,7 @@ function AuthForm({ header, button, prompt, link }){
     onsubmit(credentials);
   };
   return (
-    <section className={styles.auth}>
+    <section className="Auth">
       <form onSubmit={handleSubmit}>
         <h1>{header}</h1>
 

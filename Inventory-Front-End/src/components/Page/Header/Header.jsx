@@ -1,8 +1,9 @@
-import SlideoutMenu from './SlideoutMenu.jsx';
+// import SlideoutMenu from './SlideoutMenu.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import User from './User.jsx';
-import styles from './Header.css';
-import stylin from './Experimental.css'
+import './Header.css';
+import Hamburger from './HamburgerMenu.jsx';
+import { useWindowDimensions } from '../Layout.jsx';
 
 const primary = [
   { to: '/', label: 'Home' },
@@ -12,17 +13,23 @@ const primary = [
   { to: 'profile', label: 'Profile' },
 ];
 
+
+
+const slideMenu = true;
+
 export default function Header() {
+  const { width } = useWindowDimensions();
   return (
-    <header className={styles.Header}>
-      <div className={styles.MenuContainer}>
-        <SlideoutMenu navigation={primary} />
+    <header className="Header">
+      <div className="MenuContainer"S>
+        {/* <SlideoutMenu navigation={primary} /> */}
+        above ham
+        {width <= 700 ? <Hamburger /> : <></>}
+        below ham
       </div>
-
-      <h1 className={stylin.Stuff}>My App</h1>
-
-      <div className={styles.NavigationContainer}>
-        <Navigation navigation={primary} />
+      <div className="NavigationContainer">
+        {width > 700 ? <Navigation navigation={primary} /> : <></> }
+        NavCont
       </div>
 
       <User />

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import styles from './Navigation.css';
+import './Navigation.css';
 
 export default function Navigation({ navigation }) {
   return (
-    <nav className={styles.Navigation}>
+    <nav className="Navigation">
       {navigation.map(({ to, label }) => (
         <NavLink key={to} to={to}>
           {label}
