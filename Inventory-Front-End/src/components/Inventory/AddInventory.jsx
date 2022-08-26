@@ -59,7 +59,6 @@ export default function AddInventory() {
       />
       <FormButton>Add</FormButton>
     </form>
-      <button id='AddInventoryButton'>Add Item</button>
     </div>
   )
 }
