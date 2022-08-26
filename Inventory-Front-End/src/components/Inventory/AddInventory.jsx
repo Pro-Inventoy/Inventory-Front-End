@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useCategories } from '../../state/hooks/inventory';
 import { addItem, getIdOfCategory } from '../../state/services/inventory-service';
 import { FormButton, InputControl, SelectControl } from '../Forms/FormControl';
+import './AddInventory.css';
 
 export default function AddInventory() {
   const [quantity, setQuantity] = useState(0);
@@ -58,6 +59,7 @@ export default function AddInventory() {
         onChange={handleItemName}
       />
       <FormButton>Add</FormButton>
+      <button className='scannerButton' onClick={() =>{window.location.replace('./scanner')}}>📷</button>
     </form>
     </div>
   )
