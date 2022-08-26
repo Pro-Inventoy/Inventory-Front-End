@@ -25,7 +25,7 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new HtmlPlugin({ template: './src/index.html' }),
+    new HtmlPlugin({ template: './src/index.html', inject: false }),
     new CleanWebpackPlugin(),
     new webpack.EnvironmentPlugin(env),
     new CopyPlugin({

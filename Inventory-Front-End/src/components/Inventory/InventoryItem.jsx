@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function InventoryItem() {
+export default function InventoryItem({item}) {
   return (
-    <div>InventoryItem</div>
+    <li>
+      {item.inventoryId} {item.quantity} {item.itemname} {item.categoryId} {item.cost}
+    </li>
   )
 }
