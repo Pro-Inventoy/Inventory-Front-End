@@ -5,6 +5,7 @@ import {
   addItem,
   updateItem,
   removeItem,
+  getCategories,
 } from '../services/inventory-service.js';
 
 export function useItems() {
@@ -31,6 +32,31 @@ export function useItems() {
   }, []);
 
   return { items, error };
+}
+
+export function useCategories() {
+  const [error, setError] = useState(null);
+  const [ categories, setCategories ] = useState([]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    const fetch = async () => {
+      const { data, error } = await getCategories();
+      if (ignore) return;
+
+      if (error) {
+        setError(error);
+      }
+      if (data) {
+        setCategories(data);
+      }
+    };
+
+    fetch();
+    return () => (ignore = true);
+  }, []);
+  return categories;
 }
 
 function createDispatchActions(dispatch) {
