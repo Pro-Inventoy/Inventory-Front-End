@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useCategories } from '../../state/hooks/inventory';
 import { addItem, getIdOfCategory } from '../../state/services/inventory-service';
-import { FormButton, InputControl } from '../Forms/FormControl';
+import { FormButton, InputControl, SelectControl } from '../Forms/FormControl';
 
 export default function AddInventory() {
-  const [editing, setEditing] = useState(false);
   const [quantity, setQuantity] = useState(0);
   const [category, setCategory] = useState('');
   const [itemName, setItemName] = useState('');
@@ -12,10 +12,7 @@ export default function AddInventory() {
   const handleCategory = ({ target }) => setCategory(target.value);
   const handleItemName = ({ target }) => setItemName(target.value);
   const handleCost = ({ target }) => setCost(target.value);
-
-  function toggleEdit() {
-    setEditing(!editing);
-  }
+  const allCategories = useCategories();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +25,7 @@ export default function AddInventory() {
     setCategory('');
     setItemName('');
   };
-
+  
   return (
     <div>
     <form className='inventoryAddForm' onSubmit={handleSubmit}>
@@ -38,12 +35,18 @@ export default function AddInventory() {
         value={quantity}
         onChange={handleQuantity}
       />
-      <InputControl
-        type={'dropdown'}
-        label={'category'}
-        value={category}
-        onChange={handleCategory}
-      />
+      <SelectControl
+            type={'string'}
+            label={'category'}
+            value={category}
+            onChange={handleCategory}>
+        <option></option>
+        {allCategories.map((item) => (
+          <option key={item.category_name} value={`${item.category_name}`}>
+            {item.category_name}
+          </option>
+        ))}
+      </SelectControl>
       <InputControl
         type={'number'}
         label={'cost'}
@@ -56,10 +59,9 @@ export default function AddInventory() {
         value={itemName}
         onChange={handleItemName}
       />
-      
       <FormButton>Add</FormButton>
     </form>
-      <button onClick={toggleEdit} id='AddInventoryButton'>Add Item</button>
+      <button id='AddInventoryButton'>Add Item</button>
     </div>
   )
 }
