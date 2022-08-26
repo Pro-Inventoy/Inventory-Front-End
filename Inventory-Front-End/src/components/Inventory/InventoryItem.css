@@ -11,3 +11,8 @@
     border: 0.5px solid black;
     margin-right: 5px;
 }
+
+input[type="number"] {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}

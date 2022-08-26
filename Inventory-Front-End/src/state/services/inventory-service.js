@@ -12,6 +12,14 @@ export async function getItems() {
     category_name
     )
   `)
+  .order('inventoryId')
+  return response;
+}
+
+export async function updateQuantity(quantity, inventoryId) {
+  const response = await client
+    .from('Inventory')
+    .upsert({ 'inventoryId': inventoryId, 'quantity': quantity });
   return response;
 }
 

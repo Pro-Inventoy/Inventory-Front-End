@@ -18,8 +18,6 @@ export default function AddInventory() {
     e.preventDefault();
     const computedCategory = await getIdOfCategory(category);
     await addItem({ itemname: itemName, categoryid: computedCategory, quantity: quantity, cost: cost})
-    //TODO: category needs to be a dropdown
-    //it even all works. literally just needs category to be dropdown
     setQuantity(0);
     setCost(0);
     setCategory('');
