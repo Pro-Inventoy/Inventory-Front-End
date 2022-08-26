@@ -15,7 +15,7 @@ export default function InventoryItem({item}) {
       </div>
       <div>
         Total Cost:${item.cost * item.quantity}
-      </div> 
+      </div>
     </li>
   )
 }
