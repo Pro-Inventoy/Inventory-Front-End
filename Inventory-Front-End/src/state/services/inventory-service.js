@@ -1,10 +1,6 @@
 import client from './client.js';
 
 export async function getItems() {
-  // const response = await client
-  //   .from('Inventory')
-  //   .select(`*`)
-  // return response;
   const response = await client
   .from('Inventory')
   .select(`
@@ -16,7 +12,6 @@ export async function getItems() {
      category_name
     )
   `)
-  console.log('me get items', response);
   return response;
 }
 
@@ -26,6 +21,15 @@ export async function addItem(item) {
     .insert(item)
     .single();
   return response;
+}
+
+export async function getIdOfCategory(category) {
+  const response = await client
+    .from('Categories')
+    .select('categoryid')
+    .match({'category_name': category})
+    .single();
+  return response.body.categoryid;
 }
 
 export async function updateItem(newName, item) {
