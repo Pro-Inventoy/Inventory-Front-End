@@ -7,9 +7,11 @@ import Users from './Users/Users.jsx'
 import Profile from './Profile/Profile.jsx'
 import Layout from './Page/Layout.jsx'
 import UserAuth from './AuthPage/UserAuth.jsx'
+import './App.css'
 export default function App() {
   return (
     <div>
+      <p className="app">App</p>
         <Router>
             <Routes>
               <Route path="user/*" element={<UserAuth />} />

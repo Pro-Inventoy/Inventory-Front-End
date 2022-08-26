@@ -5,7 +5,7 @@
     padding-right: var(--padding);
     height: var(--header-height);
   
-    background: var(--header-color);
+    background: green;
     color: var(--white-color);
   
     display: grid;

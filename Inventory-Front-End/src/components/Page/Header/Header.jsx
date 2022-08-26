@@ -2,6 +2,7 @@ import SlideoutMenu from './SlideoutMenu.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import User from './User.jsx';
 import styles from './Header.css';
+import stylin from './Experimental.css'
 
 const primary = [
   { to: '/', label: 'Home' },
@@ -18,7 +19,7 @@ export default function Header() {
         <SlideoutMenu navigation={primary} />
       </div>
 
-      <h1>My App</h1>
+      <h1 className={stylin.Stuff}>My App</h1>
 
       <div className={styles.NavigationContainer}>
         <Navigation navigation={primary} />
