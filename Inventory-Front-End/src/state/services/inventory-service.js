@@ -1,9 +1,22 @@
 import client from './client.js';
 
 export async function getItems() {
+  // const response = await client
+  //   .from('Inventory')
+  //   .select(`*`)
+  // return response;
   const response = await client
-    .from('Inventory')
-    .select(`*`)
+  .from('Inventory')
+  .select(`
+    inventoryId,
+    itemname,
+    quantity,
+    cost,
+    Categories (
+     category_name
+    )
+  `)
+  console.log('me get items', response);
   return response;
 }
 
