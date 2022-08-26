@@ -6,7 +6,6 @@ import {
   updateItem,
   removeItem,
 } from '../services/inventory-service.js';
-import { showSuccess, showError } from '../services/toaster.js';
 
 export function useItems() {
   const [error, setError] = useState(null);
@@ -39,12 +38,12 @@ function createDispatchActions(dispatch) {
     return async (...args) => {
       const { data, error } = await service(...args);
 
-      if (error) showError(error.message);
+      if (error) console.log(error.message);
 
       if (data) {
         dispatch({ type, payload: data });
         const successMessage = success(data);
-        showSuccess(successMessage);
+        console.log(successMessage);
       }
     };
   };

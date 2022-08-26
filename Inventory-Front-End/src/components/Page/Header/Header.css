@@ -5,7 +5,7 @@
     padding-right: var(--padding);
     height: var(--header-height);
   
-    background: green;
+    background: light-green;
     color: var(--white-color);
   
     display: grid;
@@ -17,6 +17,8 @@
       display: none;
       justify-self: end;
     }
+
+
   
     @media (min-width: 700px) {
       padding-left: var(--padding);
