@@ -15,7 +15,7 @@ export default function NavBar() {
           Inventory<WarehouseIcon />
         </IconButton>
         <IconButton color="primary" aria-label="upload picture" component="label">
-          Users<GroupsIcon />
+          Users
         </IconButton>
         <IconButton color="primary" aria-label="upload picture" component="label">
              Profile<AccountBoxIcon />

@@ -1,22 +1,15 @@
-import { Link } from 'react-router-dom';
 import './Navigation.css';
+import { handTruck, wareHouse, persons, profile, home } from '../Icons'
 
-export default function Navigation({ navigation }) {
+export default function Navigation() {
   return (
     <nav className="Navigation">
-      {navigation.map(({ to, label }) => (
-        <NavLink key={to} to={to}>
-          {label}
-        </NavLink>
-      ))}
+      <a id="Home" className="menu-item" href="/">{home}Home</a>
+          <a id="Inventory" className="menu-item" href="/inventory">{wareHouse}Inventory</a>
+          <a id="Orders" className="menu-item" href="/orders">{handTruck}Orders</a>
+          <a id="Users" className="menu-item" href="/users">{persons} Users</a>
+          <a id="Profile" className="menu-item" href="/profile">{profile}Profile</a>
     </nav>
   );
 }
 
-function NavLink({ children, ...rest }) {
-  return (
-    <Link className="label-text" {...rest}>
-      {children}
-    </Link>
-  );
-}
