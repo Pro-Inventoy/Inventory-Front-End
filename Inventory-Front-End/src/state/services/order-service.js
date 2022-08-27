@@ -34,8 +34,7 @@ export async function getOrders() {
     `)
     .order('orderId')
     return response;
-  }
-  
+}
 
 export async function addOrder(order) {
   const response = await client
@@ -45,13 +44,13 @@ export async function addOrder(order) {
   return response;
 }
 
-export async function getIdOfInventory(inventory) {
+export async function getIdOfItem(inventory) {
   const response = await client
     .from('Inventory')
-    .select('inventoryid')
-    .match({'inventory_name': inventory})
+    .select('inventoryId')
+    .match({'itemname': inventory})
     .single();
-  return response.body.inventoryid;
+  return response.body.inventoryId;
 }
 
 export async function removeOrder(id) {

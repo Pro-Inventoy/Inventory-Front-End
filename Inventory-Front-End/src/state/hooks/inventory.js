@@ -9,8 +9,9 @@ import {
 } from '../services/inventory-service.js';
 
 export function useItems() {
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
-  const [ items, setItems ] = useState(null);
+  const [ items, setItems ] = useState([]);
 
   useEffect(() => {
     let ignore = false;
@@ -30,11 +31,10 @@ export function useItems() {
     fetch();
     return () => (ignore = true);
   }, []);
-
-  return { items, error };
+  return items;
 }
-
 export function useCategories() {
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [ categories, setCategories ] = useState([]);
 

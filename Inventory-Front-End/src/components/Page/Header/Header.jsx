@@ -15,7 +15,7 @@ const primary = [
 
 
 
-const slideMenu = true;
+// const slideMenu = true;
 
 export default function Header() {
   const { width } = useWindowDimensions();

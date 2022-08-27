@@ -8,7 +8,7 @@ export default function Order() {
     {/* <NavBar/>
      <FolderBar />
      <SearchBar /> */}
-    {/* <AddOrder /> */}
+    <AddOrder />
     <OrderList />
     </div>
   )

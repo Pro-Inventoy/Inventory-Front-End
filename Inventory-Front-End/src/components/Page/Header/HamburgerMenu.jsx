@@ -18,6 +18,7 @@ class Hamburger extends React.Component {
           <a id="Orders" className="menu-item" href="/orders">Orders</a>
           <a id="Users" className="menu-item" href="/users">Users</a>
           <a id="Profile" className="menu-item" href="/profile">Profile</a>
+           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
         </Menu>
       );
