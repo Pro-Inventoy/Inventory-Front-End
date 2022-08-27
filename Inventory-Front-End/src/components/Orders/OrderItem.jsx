@@ -6,6 +6,7 @@ import './OrderItem.css';
 
 export default function OrderItem({order}) {
   const [quantity, setQuantity] = useState(0);
+  const orderLeft = order.orderquantity - order.completed;
   const handleQuantity = ({ target }) => setQuantity(target.value);
   let [editing, setEditing] = useState(false);
 
@@ -28,6 +29,8 @@ export default function OrderItem({order}) {
       Remaining: <b>{editing ?
     <form className='orderAddForm' onSubmit={handleSubmit}>
       <InputControl
+        max={orderLeft}
+        min={-orderLeft}
         type={'number'}
         label={'units to remove'}
         value={quantity}
