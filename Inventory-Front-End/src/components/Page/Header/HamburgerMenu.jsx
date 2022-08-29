@@ -21,7 +21,7 @@ class Hamburger extends React.Component {
           <a id="Users" className="menu-item" href="/users">{persons} Users</a>
           <a id="Profile" className="menu-item" href="/profile">{profile}Profile</a>
           {/* <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
-          <a href="https://icons8.com/icon/FyZQG5LCUbyS/warehouse">Menu icons by Icons8</a>
+          <a href="https://icons8.com/icon/FyZQG5LCUbyS/warehouse">Menu icons<br/> by Icons8</a>
         </Menu>
       );
     }

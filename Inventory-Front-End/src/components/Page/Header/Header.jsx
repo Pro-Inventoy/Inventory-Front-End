@@ -18,7 +18,7 @@ export default function Header() {
   const { width } = useWindowDimensions();
   return (
     <header className="Header">
-      <div className="MenuContainer"S>
+      <div className="MenuContainer">
         {width <= 700 ? <Hamburger /> : <></>}
       </div>
       <div className="NavigationContainer">

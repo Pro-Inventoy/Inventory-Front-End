@@ -33,7 +33,7 @@ export default function Layout() {
     <>
       <div className="Layout">
         <Header />
-        <main>
+        <main className="currentpage">
           <Outlet />
         </main>
       </div>
