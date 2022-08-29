@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useCategories } from '../../state/hooks/inventory';
 import { addItem, getIdOfCategory } from '../../state/services/inventory-service';
 import { FormButton, InputControl, SelectControl } from '../Forms/FormControl';
-
+import  Cards  from '../Cards/Card.tsx';
 export default function AddInventory() {
   const [quantity, setQuantity] = useState(0);
   const [category, setCategory] = useState('');
@@ -26,6 +26,7 @@ export default function AddInventory() {
   
   return (
     <div>
+      <Cards/>
     <form className='inventoryAddForm' onSubmit={handleSubmit}>
       <InputControl
         type={'number'}
