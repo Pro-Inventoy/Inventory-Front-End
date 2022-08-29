@@ -12,7 +12,6 @@ import './App.css'
 export default function App() {
   return (
     <div>
-      <p className="app">App</p>
         <Router>
             <Routes>
               <Route path="user/*" element={<UserAuth />} />

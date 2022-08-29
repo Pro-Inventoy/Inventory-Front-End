@@ -14,22 +14,15 @@ const primary = [
 ];
 
 
-
-const slideMenu = true;
-
 export default function Header() {
   const { width } = useWindowDimensions();
   return (
     <header className="Header">
-      <div className="MenuContainer"S>
-        {/* <SlideoutMenu navigation={primary} /> */}
-        above ham
+      <div className="MenuContainer">
         {width <= 700 ? <Hamburger /> : <></>}
-        below ham
       </div>
       <div className="NavigationContainer">
         {width > 700 ? <Navigation navigation={primary} /> : <></> }
-        NavCont
       </div>
 
       <User />

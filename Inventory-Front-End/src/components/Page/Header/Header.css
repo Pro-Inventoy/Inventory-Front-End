@@ -1,4 +1,6 @@
 .Header {
+    bakground-color: black;
+    height:400px;
     z-index: 1000;
     position: sticky;
     top: 0;
@@ -13,14 +15,14 @@
     gap: 20px;
     align-items: center;
   
-    .NavigationContainer {
+    /* .NavigationContainer {
       display: none;
       justify-self: end;
-    }
+    } */
 
 
   
-    @media (min-width: 700px) {
+    /* @media (min-width: 700px) {
       padding-left: var(--padding);
   
       .MenuContainer {
@@ -30,6 +32,6 @@
       .NavigationContainer {
         display: initial;
       }
-    }
+    } */
   }
   
